@@ -15,6 +15,8 @@ class Car {
     this.handbrakeDeceleration = 0.1;
 
     this.controls = new Controls();
+
+    this.sensor = new Sensor(this);
   }
 
   draw(context) {
@@ -25,10 +27,13 @@ class Car {
     context.rect(-this.width / 2, -this.height / 2, this.width, this.height);
     context.fill();
     context.restore();
+
+    this.sensor.draw(context);
   }
 
-  update() {
+  update(roadBorders) {
     this.#move();
+    this.sensor.update(roadBorders);
   }
 
   #move() {

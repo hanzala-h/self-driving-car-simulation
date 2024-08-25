@@ -9,7 +9,7 @@ const road = new Road(canvas.width / 2, canvas.width * 0.9);
 const car = new Car(road.getLaneCenter(), 100, 30, 50);
 
 const animate = () => {
-  car.update();
+  car.update(road.borders);
 
   canvas.height = window.innerHeight;
 
@@ -26,4 +26,4 @@ const animate = () => {
 
 animate();
 
-// 51 : 23 ... https://www.youtube.com/watch?v=Rs_rAxEsAvI
+// 1:10:30 ... https://www.youtube.com/watch?v=Rs_rAxEsAvI&t=3083s
